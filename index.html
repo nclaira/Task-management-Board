@@ -59,15 +59,18 @@
       </div>
 
       <!-- Submit Button -->
-      <button 
-        type="submit" 
-        class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-      >
-        Add Task
-      </button>
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add Task</button>
       <!-- type="submit" -> when clicked, it will "submit" the form -->
       <!-- hover:bg-blue-700 = button becomes darker blue when mouse is on it -->
     </form>
+  </section>
+
+
+   <!-- Task List Section -->
+  <section class="max-w-2xl mx-auto mt-6 bg-white p-6 rounded-lg shadow">
+    <h2 class="text-xl font-semibold mb-4">Your Tasks</h2>    <!-- This empty div will be filled by JavaScript -->
+    <div id="taskList" class="space-y-4">      <!-- space-y-4 = vertical spacing between each task -->
+    </div>
   </section>
 
     
