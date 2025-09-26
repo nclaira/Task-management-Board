@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task management Board</title>
+</head>
+<body>
+
+    <body class="bg-gray-100 min-h-screen">
+  <!-- bg-gray-100 gives a light gray background; min-h-screen ensures full height -->
+
+  <!-- Header Section -->
+  <header class="bg-blue-600 text-white p-4">
+    <!-- bg-blue-600 = blue background, text-white = white text, p-4 = padding -->
+    <h1 class="text-2xl font-bold text-center">Task Management Dashboard</h1>
+    <!-- text-2xl = big font size, font-bold = bold, text-center = centered -->
+  </header>
+
+
+    <!-- Task Input Form Section -->
+  <section class="max-w-2xl mx-auto mt-6 bg-white p-6 rounded-lg shadow">
+    <!-- max-w-2xl = limit width (not too wide), mx-auto = center horizontally -->
+    <!-- mt-6 = margin top, bg-white = white box, p-6 = padding inside -->
+    <!-- rounded-lg = rounded corners, shadow = soft shadow around box -->
+
+    <h2 class="text-xl font-semibold mb-4">Add New Task</h2>
+    <!-- text-xl = slightly big, font-semibold = medium bold, mb-4 = margin bottom -->
+
+    <!-- Our form starts here -->
+    <form id="taskForm" class="flex flex-col gap-4">
+      <!-- id="taskForm" -> we’ll use this in JS to listen when user submits -->
+      <!-- flex flex-col gap-4 = vertical layout with spacing -->
+
+      <!-- Task Name Input -->
+      <div>
+        <label for="taskName" class="block font-medium">Task Name</label>
+        <!-- label is connected to input by "for=taskName" -->
+        <input 
+          type="text" 
+          id="taskName" 
+          placeholder="Enter your task..." 
+          class="w-full p-2 border rounded"
+        />
+        <!-- id="taskName" = we’ll use this in JS to read what user typed -->
+        <!-- w-full = full width, p-2 = padding, border + rounded = styling -->
+      </div>
+
+      <!-- Due Date Input -->
+      <div>
+        <label for="dueDate" class="block font-medium">Due Date</label>
+        <input 
+          type="date" 
+          id="dueDate" 
+          class="w-full p-2 border rounded"
+        />
+        <!-- type="date" gives a date picker -->
+        <!-- id="dueDate" = we’ll use this in JS too -->
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+      >
+        Add Task
+      </button>
+      <!-- type="submit" -> when clicked, it will "submit" the form -->
+      <!-- hover:bg-blue-700 = button becomes darker blue when mouse is on it -->
+    </form>
+  </section>
+
+    
+</body>
+</html>
