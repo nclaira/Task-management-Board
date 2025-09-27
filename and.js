@@ -60,7 +60,7 @@
     if (taskName === "") {
       alert("Task name cannot be empty!");
       return;
-    }
+    } 
 
     // Create a new task object
     const newTask = {
