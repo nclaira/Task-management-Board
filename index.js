@@ -47,7 +47,7 @@
 
 
   
-    //Handle Form Submission (Adding New Task)
+    //Handle Form Submission (Adding New Task)    enable adding new task
   const taskForm = document.getElementById("taskForm");
 
   // Listen when user submits the form
