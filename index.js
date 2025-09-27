@@ -63,11 +63,11 @@
     const dueDate = dueDateInput.value;
 
 
-    // // Validation: Task name must not be empty
-    // if (taskName === "") {
-    //   alert("Task name cannot be empty!");
-    //   return;
-    // } 
+    // Validation: Task name must not be empty
+    if (taskName === "") {
+      alert("Task name cannot be empty!");
+      return;
+    } 
 
 
 
