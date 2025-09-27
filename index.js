@@ -134,6 +134,20 @@
 
 
 
+   // Function to delete a task
+  function deleteTask(index) {
+    // Confirm before deleting
+    const confirmDelete = confirm("Are you sure you want to delete this task?");
+    if (!confirmDelete) return;
+
+    // Remove task from array using index
+    tasks.splice(index, 1); // removes 1 item at position 'index'
+
+    // Refresh task list
+    displayTasks();
+  }
+
+
 
 
 
