@@ -95,42 +95,42 @@
 
 //Add Delete Button in displayTasks()
 
-//     function displayTasks() {
-//     const taskList = document.getElementById("taskList");
-//     taskList.innerHTML = ""; // clear old content before adding new
+    function displayTasks() {
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = ""; // clear old content before adding new
 
-//     tasks.forEach((task, index) => {
-//       const taskDiv = document.createElement("div");
-//       taskDiv.className = "flex justify-between items-center border p-3 rounded";
+    tasks.forEach((task, index) => {
+      const taskDiv = document.createElement("div");
+      taskDiv.className = "flex justify-between items-center border p-3 rounded";
 
-//       // LEFT: Task info
-//       const taskInfo = `
-//         <div>
-//           <p class="font-medium">${task.name}</p>
-//           <p class="text-sm text-gray-500">Due: ${task.dueDate}</p>
-//           <p class="text-sm">Status: 
-//             <span class="${task.status === "Completed" ? "text-green-600" : "text-yellow-600"}">
-//               ${task.status}
-//             </span>
-//           </p>
-//         </div>
-//       `;
+      // LEFT: Task info
+      const taskInfo = `
+        <div>
+          <p class="font-medium">${task.name}</p>
+          <p class="text-sm text-gray-500">Due: ${task.dueDate}</p>
+          <p class="text-sm">Status: 
+            <span class="${task.status === "Completed" ? "text-green-600" : "text-yellow-600"}">
+              ${task.status}
+            </span>
+          </p>
+        </div>
+      `;
 
-//       // RIGHT: Action buttons (Delete now, others later)
-//       const taskActions = `
-//         <div class="flex gap-2">
-//           <button onclick="deleteTask(${index})" 
-//             class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-//             Delete
-//           </button>
-//         </div>
-//       `;
+      // RIGHT: Action buttons (Delete now, others later)
+      const taskActions = `
+        <div class="flex gap-2">
+          <button onclick="deleteTask(${index})" 
+            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+            Delete
+          </button>
+        </div>
+      `;
 
-//       taskDiv.innerHTML = taskInfo + taskActions;
+      taskDiv.innerHTML = taskInfo + taskActions;
 
-//       taskList.appendChild(taskDiv);
-//     });
-//   }
+      taskList.appendChild(taskDiv);
+    });
+  }
 
 
 
