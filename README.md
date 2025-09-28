@@ -1,2 +1,2 @@
-![grid](./screen1.png)
-![grid](./screen2.png)
+![grid](.screen1.png)
+![grid](.screen2.png)
