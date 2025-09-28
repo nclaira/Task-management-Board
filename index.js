@@ -149,6 +149,107 @@
 
 
 
+  //Update displayTasks() with complete & incomplete , edit Buttons
+
+
+
+  function displayTasks() {
+  const taskList = document.getElementById("taskList");
+  taskList.innerHTML = ""; // clear old content before adding new
+
+  tasks.forEach((task, index) => {
+    const taskDiv = document.createElement("div");
+    taskDiv.className = "flex justify-between items-center border p-3 rounded";
+
+    // LEFT: Task info (if completed → strike-through text)
+    const taskInfo = `
+      <div>
+        <p class="font-medium ${task.status === "Completed" ? "line-through text-gray-500" : ""}">
+          ${task.name}
+        </p>
+        <p class="text-sm text-gray-500">Due: ${task.dueDate}</p>
+        <p class="text-sm">Status: 
+          <span class="${task.status === "Completed" ? "text-green-600" : "text-yellow-600"}">
+            ${task.status}
+          </span>
+        </p>
+      </div>
+    `;
+
+    // RIGHT: Action buttons
+    const taskActions = `
+      <div class="flex gap-2">
+        <button onclick="toggleStatus(${index})" 
+          class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
+          ${task.status === "Completed" ? "Mark Pending" : "Mark Complete"}
+        </button>
+
+        <button onclick="editTask(${index})" 
+          class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+          Edit
+        </button>
+
+        <button onclick="deleteTask(${index})" 
+          class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+          Delete
+        </button>
+      </div>
+    `;
+
+    taskDiv.innerHTML = taskInfo + taskActions;
+
+    taskList.appendChild(taskDiv);
+  });
+}
+
+
+
+
+
+//Add toggleStatus() Function
+
+// Function to mark task as Complete / Pending
+
+function toggleStatus(index) {
+  // Toggle between "Pending" and "Completed"
+  tasks[index].status = (tasks[index].status === "Pending") ? "Completed" : "Pending";
+
+  // Refresh task list
+  displayTasks();
+}
+
+
+
+//Add edit task function
+
+// Function to edit a task
+
+function editTask(index) {
+  // Ask new name (default: current name)
+  const newName = prompt("Edit task name:", tasks[index].name);
+  if (newName === null || newName.trim() === "") return; // Cancel or empty
+
+  // Ask new due date (default: current due date)
+  const newDate = prompt("Edit due date (YYYY-MM-DD):", tasks[index].dueDate);
+  if (newDate === null || newDate.trim() === "") return;
+
+  // Update task
+  tasks[index].name = newName.trim();
+  tasks[index].dueDate = newDate;
+
+  // Refresh list
+  displayTasks();
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
