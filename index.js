@@ -10,6 +10,11 @@
 
 
 
+  function filterTasks(){
+    
+  }
+
+
    // Function to display tasks in the DOM
   function displayTasks() {
     const taskList = document.getElementById("taskList");
@@ -238,6 +243,7 @@ function editTask(index) {
   // Refresh list
   displayTasks();
 }
+
 
 
 
