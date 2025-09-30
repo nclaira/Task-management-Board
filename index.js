@@ -2,7 +2,7 @@
   // Each task is an object with: name, dueDate, and status
   let tasks = [
     { name: "watch movie", dueDate: "2025-09-28", status: "Pending" },
-    { name: "Buy groceries", dueDate: "2025-09-27", status: "Pending" },
+    { name: "Call my friend", dueDate: "2025-09-27", status: "Pending" },
     { name: "Go to the gym", dueDate: "2025-09-29", status: "Pending" },
     { name: "Call Mom", dueDate: "2025-09-26", status: "Pending" },
     { name: "Pay electricity bill", dueDate: "2025-09-30", status: "Pending" }
@@ -10,9 +10,7 @@
 
 
 
-
-
-   // Step 2: Function to display tasks in the DOM
+   // Function to display tasks in the DOM
   function displayTasks() {
     const taskList = document.getElementById("taskList");
     taskList.innerHTML = "";   // clear old content before adding new
@@ -24,7 +22,7 @@
       const taskDiv = document.createElement("div");
       taskDiv.className = "flex justify-between items-center border p-3 rounded";
 
-      // Task info: name + due date + status
+      // Task info: name , due date , status
       taskDiv.innerHTML = `                                      
         <div>
           <p class="font-medium">${task.name}</p>
@@ -35,7 +33,7 @@
             </span>
           </p>
         </div>
-      `;          //embed variables or write multi-line text,backtick is better
+      `;                                                   //embed variables or write multi-line text,backtick is better
 
       taskList.appendChild(taskDiv); // add taskDiv inside taskList
     });
@@ -59,7 +57,7 @@
     const taskNameInput = document.getElementById("taskName");
     const dueDateInput = document.getElementById("dueDate");
 
-    const taskName = taskNameInput.value.trim(); // remove spaces
+    const taskName = taskNameInput.value.trim();                                                       // remove spaces
     const dueDate = dueDateInput.value;
 
 
@@ -97,7 +95,7 @@
 
     function displayTasks() {
     const taskList = document.getElementById("taskList");
-    taskList.innerHTML = ""; // clear old content before adding new
+    taskList.innerHTML = "";                                                                                              // clear old content before adding new
 
     tasks.forEach((task, index) => {
       const taskDiv = document.createElement("div");
@@ -116,7 +114,7 @@
         </div>
       `;
 
-      // RIGHT: Action buttons (Delete now, others later)
+      // RIGHT: Action buttons (Delete)
       const taskActions = `
         <div class="flex gap-2">
           <button onclick="deleteTask(${index})" 
@@ -125,7 +123,7 @@
           </button>
         </div>
       `;
-
+w
       taskDiv.innerHTML = taskInfo + taskActions;
 
       taskList.appendChild(taskDiv);
@@ -178,7 +176,7 @@
 
     // RIGHT: Action buttons
     const taskActions = `
-      <div class="flex gap-2">
+      <div class="flex flex-col md:flex-row gap-2 ">
         <button onclick="toggleStatus(${index})" 
           class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
           ${task.status === "Completed" ? "Mark Pending" : "Mark Complete"}
