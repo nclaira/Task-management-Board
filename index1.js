@@ -9,11 +9,12 @@ let tasks = [
 
 
 // filter function
+
 function filterTasks() {
   const filterValue = document.getElementById("filterSelect").value;
 
   if (filterValue === "all") {
-                                                                                                 // Show everything except deleted
+    // Show everything except deleted
     return tasks.filter(task => task.status !== "Deleted");
   }
   if (filterValue === "completed") {
@@ -22,11 +23,11 @@ function filterTasks() {
   if (filterValue === "deleted") {
     return tasks.filter(task => task.status === "Deleted");
   }
-  return tasks;
+  return tasks; // fallback
 }
 
 
-// display function 
+// display function
 function displayTasks() {
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = ""; // Clear old tasks
@@ -54,7 +55,7 @@ function displayTasks() {
       </div>
     `;
 
-    // right side: action buttons
+    // RIGHT SIDE: action buttons
     const taskActions = `
       <div class="flex flex-col md:flex-row gap-2 ">
         <button onclick="toggleStatus(${index})" 
@@ -78,6 +79,7 @@ function displayTasks() {
     taskList.appendChild(taskDiv);
   });
 }
+
 
 
 // add new task
